@@ -1,0 +1,41 @@
+
+:root {
+    --header: rgb(95, 124, 213);
+    --mainBG: rgb(174, 159, 159);
+    --mainText: rgb(1, 1, 103);
+}
+
+
+* {
+    font-family: 'Playfair Display', serif;
+    background-color: var(--mainBG);
+    color: var(--mainText);
+}
+
+
+
+
+h1 {
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+#search {
+    height: 80vh;
+}
+
+#inputText::placeholder {
+    color: var(--mainText);
+}
+
+button {
+    width: 40px;
+}
+
+
+
