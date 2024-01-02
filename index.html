@@ -18,7 +18,7 @@
         <header id="top" class="my-5">
             <h1>Where's the Weather?</h1>
         </header>
-        <div id="search" class="col-sm-12 col-md-6 col-lg-4 p-3 mb-3">
+        <div id="search" class="col-sm-12 col-lg-6 col-xl-3 p-3 mb-3">
             <form id="searchForm">
                 <label for="location">Location:</label>
                 <input id="inputText" type="text" class="p-1" placeholder="City">
@@ -30,8 +30,8 @@
     
         </div>
     
-        <div class="col-sm-12 col-md-6 col-lg-4 p-3 mb-3">
-            <img src="" alt="weather Icon" class="icon">
+        <div class="col-sm-12 col-lg-6 col-xl-4 p-3 mb-3">
+            <img src="./assets/images/mist.png" alt="weather Icon" class="icon">
             <h2 class="temp">22</h2>
             <h3 class="city"></h3>
             <div id="day">
@@ -42,15 +42,32 @@
             </div>
         </div>
     
-        <div class="col-sm-12 col-lg-4 p-3">
+        <div class="col-sm-12 col-xl-5 p-3">
             <h2>5 Day Forcast</h2>
             <div id="week">
-    
+                <div class="row justify-content-center">
+                    <div class="col-2">
+                        <h4>1</h4>
+                    </div>
+                    <div class="col-2">
+                        <h4>2</h4>
+                    </div>
+                    <div class="col-2">
+                        <h4>3</h4>
+                    </div>
+                    <div class="col-2">
+                        <h4>4</h4>          
+                    </div>
+                    <div class="col-2">
+                        <h4>5</h4>           
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js" integrity="sha512-FwNWaxyfy2XlEINoSnZh1JQ5TRRtGow0D6XcmAWmYCRgvqOUTnzCxPc9uF35u5ZEpirk1uhlPVA19tflhvnW1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/open-weather/2.0.0/openweather.min.js" integrity="sha512-mlRoH3bU+q4t5clJkMwltJcka6JyNWsUJybBclHUiU0Bdux6LtcNqO8XMNi9/vp4+KCteAbc0hYnHU4Rh2SH+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./assets/script.js"></script>
