@@ -22,6 +22,8 @@ var apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
 var weekForcastUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric";
 const currentDate = dayjs();
 
+var days = [day1, day2, day3, day4, day5];
+var icons = [icon1, icon2, icon3, icon4, icon5];
 
 function searchFormSubmit (event){
     event.preventDefault();
@@ -81,112 +83,36 @@ async function getWeather() {
         weatherIcon.attr('src', './assets/images/snow.png');
     }
 
-    // 1
+    for (var i = 0; i < icons.length; i++) {
+       
+       
+        if (weekForcastReturn.list[i].weather[0].main == 'Clouds') {
+            icons[i].attr('src', './assets/images/clouds.png');
+        }else if (weekForcastReturn.list[i].weather[0].main == 'Clear') {
+            icons[i].attr('src', './assets/images/clear.png');
+        }else if (weekForcastReturn.list[i].weather[0].main == 'Rain') {
+            icons[i].attr('src', './assets/images/rain.png');
+        }else if (weekForcastReturn.list[i].weather[0].main == 'Drizzle') {
+            icons[i].attr('src', './assets/images/drizzle.png');
+        }else if (weekForcastReturn.list[i].weather[0].main == 'Mist') {
+            icons[i].attr('src', './assets/images/mist.png');
+        }else if (weekForcastReturn.list[i].weather[0].main == 'Snow') {
+            icons[i].attr('src', './assets/images/snow.png');
+        }
+    };
 
-    if (weekForcastReturn.list[0].weather[0].main == 'Clouds') {
-        icon1.attr('src', './assets/images/clouds.png');
-    }else if (weekForcastReturn.list[0].weather[0].main == 'Clear') {
-        icon1.attr('src', './assets/images/clear.png');
-    }else if (weekForcastReturn.list[0].weather[0].main == 'Rain') {
-        icon1.attr('src', './assets/images/rain.png');
-    }else if (weekForcastReturn.list[0].weather[0].main == 'Drizzle') {
-        icon1.attr('src', './assets/images/drizzle.png');
-    }else if (weekForcastReturn.list[0].weather[0].main == 'Mist') {
-        icon1.attr('src', './assets/images/mist.png');
-    }else if (weekForcastReturn.list[0].weather[0].main == 'Snow') {
-        icon1.attr('src', './assets/images/snow.png');
-    }
-    
-// 2
-
-    if (weekForcastReturn.list[1].weather[0].main == 'Clouds') {
-        icon2.attr('src', './assets/images/clouds.png');
-    }else if (weekForcastReturn.list[1].weather[0].main == 'Clear') {
-        icon2.attr('src', './assets/images/clear.png');
-    }else if (weekForcastReturn.list[1].weather[0].main == 'Rain') {
-        icon2.attr('src', './assets/images/rain.png');
-    }else if (weekForcastReturn.list[1].weather[0].main == 'Drizzle') {
-        icon2.attr('src', './assets/images/drizzle.png');
-    }else if (weekForcastReturn.list[1].weather[0].main == 'Mist') {
-        icon2.attr('src', './assets/images/mist.png');
-    }else if (weekForcastReturn.list[1].weather[0].main == 'Snow') {
-        icon2.attr('src', './assets/images/snow.png');
-    }
-
-// 3
-
-    if (weekForcastReturn.list[2].weather[0].main == 'Clouds') {
-        icon3.attr('src', './assets/images/clouds.png');
-    }else if (weekForcastReturn.list[2].weather[0].main == 'Clear') {
-        icon3.attr('src', './assets/images/clear.png');
-    }else if (weekForcastReturn.list[2].weather[0].main == 'Rain') {
-        icon3.attr('src', './assets/images/rain.png');
-    }else if (weekForcastReturn.list[2].weather[0].main == 'Drizzle') {
-        icon3.attr('src', './assets/images/drizzle.png');
-    }else if (weekForcastReturn.list[2].weather[0].main == 'Mist') {
-        icon3.attr('src', './assets/images/mist.png');
-    }else if (weekForcastReturn.list[2].weather[0].main == 'Snow') {
-        icon3.attr('src', './assets/images/snow.png');
-    }
-
-    // 4
-
-    if (weekForcastReturn.list[3].weather[0].main == 'Clouds') {
-        icon4.attr('src', './assets/images/clouds.png');
-    }else if (weekForcastReturn.list[3].weather[0].main == 'Clear') {
-        icon4.attr('src', './assets/images/clear.png');
-    }else if (weekForcastReturn.list[3].weather[0].main == 'Rain') {
-        icon4.attr('src', './assets/images/rain.png');
-    }else if (weekForcastReturn.list[3].weather[0].main == 'Drizzle') {
-        icon4.attr('src', './assets/images/drizzle.png');
-    }else if (weekForcastReturn.list[3].weather[0].main == 'Mist') {
-        icon4.attr('src', './assets/images/mist.png');
-    }else if (weekForcastReturn.list[3].weather[0].main == 'Snow') {
-        icon4.attr('src', './assets/images/snow.png');
-    }
-
-    // 5
-
-    if (weekForcastReturn.list[4].weather[0].main == 'Clouds') {
-        icon5.attr('src', './assets/images/clouds.png');
-    }else if (weekForcastReturn.list[4].weather[0].main == 'Clear') {
-        icon5.attr('src', './assets/images/clear.png');
-    }else if (weekForcastReturn.list[4].weather[0].main == 'Rain') {
-        icon5.attr('src', './assets/images/rain.png');
-    }else if (weekForcastReturn.list[4].weather[0].main == 'Drizzle') {
-        icon5.attr('src', './assets/images/drizzle.png');
-    }else if (weekForcastReturn.list[4].weather[0].main == 'Mist') {
-        icon5.attr('src', './assets/images/mist.png');
-    }else if (weekForcastReturn.list[4].weather[0].main == 'Snow') {
-        icon5.attr('src', './assets/images/snow.png');
-    }
-
-
-
-
-console.log(weekForcastReturn);
-console.log(weekForcastReturn.list[0].weather[0].main);
 
 }
-
 
 var checkTime = function() {
 
 date.html(currentDate.format('dddd, MMMM D, YYYY'));
 
-const day1Name = currentDate.add(1, 'day');
-const day2Name = currentDate.add(2, 'day');
-const day3Name = currentDate.add(3, 'day');
-const day4Name = currentDate.add(4, 'day');
-const day5Name = currentDate.add(5, 'day');
+for (var i = 0; i < days.length; i++) {
+    days[i].html(currentDate.add(i+1, 'day').format('ddd'))
+};
 
-day1.html(day1Name.format('ddd'));
-day2.html(day2Name.format('ddd'));
-day3.html(day3Name.format('ddd'));
-day4.html(day4Name.format('ddd'));
-day5.html(day5Name.format('ddd'));
-
-}
+};
 
 
 
