@@ -7,23 +7,17 @@ var windSpeed = $('.windSpeed');
 var humidity = $('.humidity');
 var weatherIcon = $('.icon');
 var date = $('.date');
-var day1 = $('#day1');
-var day2 = $('#day2');
-var day3 = $('#day3');
-var day4 = $('#day4');
-var day5 = $('#day5');
-var icon1 = $('#1Icon');
-var icon2 = $('#2Icon');
-var icon3 = $('#3Icon');
-var icon4 = $('#4Icon');
-var icon5 = $('#5Icon');
 var apiKey = 'b2783bbf1219f33d7587949eaf4936eb';
 var apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
 var weekForcastUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric";
-const currentDate = dayjs();
 
-var days = [day1, day2, day3, day4, day5];
-var icons = [icon1, icon2, icon3, icon4, icon5];
+var days = [$('#day1'), $('#day2'), $('#day3'), $('#day4'), $('#day5')];
+var icons = [$('#1Icon'), $('#2Icon'), $('#3Icon'), $('#4Icon'), $('#5Icon')];
+var temps = [$('.temp1'), $('.temp2'), $('.temp3'), $('.temp4'), $('.temp5')];
+var windSpeeds = [$('.windSpeed1'), $('.windSpeed2'), $('.windSpeed3'), $('.windSpeed4'), $('.windSpeed5')];
+var humidities = [$('.humidity1'), $('.humidity2'), $('.humidity3'), $('.humidity4'), $('.humidity5')];
+
+
 
 function searchFormSubmit (event){
     event.preventDefault();
@@ -51,23 +45,17 @@ async function getWeather() {
     windSpeed.html(Number(infoReturn.wind.speed.toFixed(1)) + ' km/h');
     humidity.html(infoReturn.main.humidity + ' % humidity');
 
-    $('.temp1').html(Math.round(weekForcastReturn.list[0].main.temp) + '°C');
-    $('.temp2').html(Math.round(weekForcastReturn.list[1].main.temp) + '°C');
-    $('.temp3').html(Math.round(weekForcastReturn.list[2].main.temp) + '°C');
-    $('.temp4').html(Math.round(weekForcastReturn.list[3].main.temp) + '°C');
-    $('.temp5').html(Math.round(weekForcastReturn.list[4].main.temp) + '°C');
+    for (var i = 0; i < temps.length; i++) {
+        temps[i].html(Math.round(weekForcastReturn.list[i].main.temp) + '°C');
+    };
 
-    $('.windSpeed1').html(Number(weekForcastReturn.list[0].wind.speed.toFixed(1)) + ' km/h');
-    $('.windSpeed2').html(Number(weekForcastReturn.list[1].wind.speed.toFixed(1)) + ' km/h');
-    $('.windSpeed3').html(Number(weekForcastReturn.list[2].wind.speed.toFixed(1)) + ' km/h');
-    $('.windSpeed4').html(Number(weekForcastReturn.list[3].wind.speed.toFixed(1)) + ' km/h');
-    $('.windSpeed5').html(Number(weekForcastReturn.list[4].wind.speed.toFixed(1)) + ' km/h');
+    for (var i = 0; i < windSpeed.length; i++) {
+        windSpeeds[i].html(Number(weekForcastReturn.list[i].wind.speed.toFixed(1)) + ' km/h');
+    };
 
-    $('.humidity1').html('humidity ' + weekForcastReturn.list[0].main.humidity + '%');
-    $('.humidity2').html('humidity ' + weekForcastReturn.list[1].main.humidity  + '%');
-    $('.humidity3').html('humidity ' + weekForcastReturn.list[2].main.humidity  + '%');
-    $('.humidity4').html('humidity ' + weekForcastReturn.list[3].main.humidity  + '%');
-    $('.humidity5').html('humidity ' + weekForcastReturn.list[4].main.humidity  + '%');
+    for (var i = 0; i < humidities.length; i++) {
+        humidities[i].html('humidity ' + weekForcastReturn.list[i].main.humidity + '%');
+    };
 
     if (infoReturn.weather[0].main == 'Clouds') {
         weatherIcon.attr('src', './assets/images/clouds.png');
@@ -81,7 +69,7 @@ async function getWeather() {
         weatherIcon.attr('src', './assets/images/mist.png');
     }else if (infoReturn.weather[0].main == 'Snow') {
         weatherIcon.attr('src', './assets/images/snow.png');
-    }
+    };
 
     for (var i = 0; i < icons.length; i++) {
        
@@ -106,6 +94,8 @@ async function getWeather() {
 
 var checkTime = function() {
 
+    const currentDate = dayjs();
+
 date.html(currentDate.format('dddd, MMMM D, YYYY'));
 
 for (var i = 0; i < days.length; i++) {
@@ -114,10 +104,6 @@ for (var i = 0; i < days.length; i++) {
 
 };
 
-
-
 checkTime();
-
-
 
 formEl.on('click', searchFormSubmit);
