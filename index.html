@@ -14,11 +14,12 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row text-center">
+    <div class="container-fluid row text-center">
         <header id="top" class="my-5">
             <h1>Where's the Weather?</h1>
         </header>
         <div id="search" class="col-sm-12 col-lg-6 col-xl-3 p-2 mb-3">
+            <button id="clearBtn">Clear</button>
             <form id="searchForm">
                 <label for="location">Location:</label>
                 <input id="inputText" type="text" class="p-1" placeholder="City">
@@ -27,7 +28,11 @@
                 </button>
     
             </form>
-    
+<p id="location1" class="savedLocation"></p>
+<p id="location2" class="savedLocation"></p>
+<p id="location3" class="savedLocation"></p>
+<p id="location4" class="savedLocation"></p>
+<p id="location5" class="savedLocation"></p>
         </div>
     
         <div class="col-sm-12 col-lg-6 col-xl-4 p-3 mb-3">
