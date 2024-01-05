@@ -1,6 +1,6 @@
 
 :root {
-    --header: rgb(95, 124, 213);
+    --header: rgb(140, 154, 198);
     --mainBG: rgb(174, 159, 159);
     --mainText: rgb(1, 1, 103);
 }
@@ -35,12 +35,39 @@ h2 {
 }
 
 button {
-    width: 40px;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .week {
 width: 80%;
+margin-bottom: 20px;
+}
+
+.temp1, .temp2, .temp3, .temp4, .temp5 {
+    border: 2px solid var(--mainText);
+    padding: 5px;
+    border-radius: 8px;
 }
 
 
+.pastSearch {
+    padding: 10px;
+    border: 3px solid var(--mainText);
+    border-radius: 8px;
+}
 
+.pastSearch:hover {
+    cursor: grab;
+    background-color: var(--header);
+  }
+
+  #clearBtn:hover {
+    cursor: grab;
+    background-color: rgb(204, 118, 118);
+  }
+
+  #searchBtn:hover {
+    cursor: grab;
+    background-color: rgb(51, 51, 51);
+  }
