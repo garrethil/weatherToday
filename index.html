@@ -1,102 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>What's the Weather?</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/reset.css">
-    <link rel="stylesheet" href="./assets/style.css">
-</head>
-<body>
-<div class="container-fluid">
-    <div class="container-fluid row text-center">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container-fluid row text-center">
         <header id="top" class="my-5">
-            <h1>Where's the Weather?</h1>
+          <h1>Where's the Weather?</h1>
         </header>
         <div id="search" class="col-sm-12 col-lg-6 col-xl-3 p-2 mb-3">
-            
-            <form class="mb-4" id="searchForm">
-                <label for="location">Location:</label>
-                <input id="inputText" type="text" class="p-1" placeholder="City">
-                <button id="searchButton" class="p-1 mx-2">
-                    <i class="fa-solid fa-location-arrow"></i>
-                </button>
-    
-            </form>
+          <form class="mb-4" id="searchForm">
+            <label for="location">Location:</label>
+            <input id="inputText" type="text" class="p-1" placeholder="City" />
+            <button id="searchButton" class="p-1 mx-2">
+              <i class="fa-solid fa-location-arrow"></i>
+            </button>
+          </form>
 
-            <div id="searchHistory" class="d-flex flex-column text-center my-3">
-
-            </div>
-            <button id="clearBtn">Clear</button>
+          <div
+            id="searchHistory"
+            class="d-flex flex-column text-center my-3"
+          ></div>
+          <button id="clearBtn">Clear</button>
         </div>
-    
+
         <div class="col-sm-12 col-lg-6 col-xl-4 p-3 mb-3">
-            <h2 class="city"></h2>
-            <h3 class="date"></h3>
+          <h2 class="city"></h2>
+          <h3 class="date"></h3>
 
-            <img src="./assets/images/mist.png" alt="weather Icon" class="icon">
-            <h3 class="temp">22</h3>
-            <div id="day">
-                <div class="col">
-                    <p class="windSpeed"></p>
-                    <p class="humidity"></p>
-                </div>
+          <img src="./assets/images/mist.png" alt="weather Icon" class="icon" />
+          <h3 class="temp">22</h3>
+          <div id="day">
+            <div class="col">
+              <p class="windSpeed"></p>
+              <p class="humidity"></p>
             </div>
+          </div>
         </div>
-    
+
         <div class="col-sm-12 col-xl-5 p-3">
-            <h2 class="mb-4">5 Day Forcast</h2>
-            <div id="week">
-                <div class="row justify-content-center">
-                    <div class="col-2">
-                        <h4 id="day1">1</h4>
-                        <img class="week" id="1Icon" src="" alt="day 1 weather icon">
-                        <p class="temp1"></p>
-                        <p class="windSpeed1"></p>
-                        <p class="humidity1"></p>
-                    </div>
-                    <div class="col-2">
-                        <h4 id="day2">2</h4>
-                        <img class="week" id="2Icon" src="" alt="day 2 weather icon">
-                        <p class="temp2"></p>
-                        <p class="windSpeed2"></p>
-                        <p class="humidity2"></p>
-                    </div>
-                    <div class="col-2">
-                        <h4 id="day3">3</h4>
-                        <img class="week" id="3Icon" src="" alt="day 3 weather icon">
-                        <p class="temp3"></p>
-                        <p class="windSpeed3"></p>
-                        <p class="humidity3"></p>
-                    </div>
-                    <div class="col-2">
-                        <h4 id="day4">4</h4> 
-                        <img class="week" id="4Icon" src="" alt="day 4 weather icon"> 
-                        <p class="temp4"></p>
-                        <p class="windSpeed4"></p>
-                        <p class="humidity4"></p>        
-                    </div>
-                    <div class="col-2">
-                        <h4 id="day5">5</h4>  
-                        <img class="week" id="5Icon" src="" alt="day 5 weather icon">  
-                        <p class="temp5"></p>
-                        <p class="windSpeed5"></p>
-                        <p class="humidity5"></p>       
-                    </div>
-                </div>
+          <h2 class="mb-4">5 Day Forcast</h2>
+          <div id="week">
+            <div class="row justify-content-center">
+              <div class="col-2">
+                <h4 id="day1">1</h4>
+                <img class="week" id="1Icon" src="" alt="day 1 weather icon" />
+                <p class="temp1"></p>
+                <p class="windSpeed1"></p>
+                <p class="humidity1"></p>
+              </div>
+              <div class="col-2">
+                <h4 id="day2">2</h4>
+                <img class="week" id="2Icon" src="" alt="day 2 weather icon" />
+                <p class="temp2"></p>
+                <p class="windSpeed2"></p>
+                <p class="humidity2"></p>
+              </div>
+              <div class="col-2">
+                <h4 id="day3">3</h4>
+                <img class="week" id="3Icon" src="" alt="day 3 weather icon" />
+                <p class="temp3"></p>
+                <p class="windSpeed3"></p>
+                <p class="humidity3"></p>
+              </div>
+              <div class="col-2">
+                <h4 id="day4">4</h4>
+                <img class="week" id="4Icon" src="" alt="day 4 weather icon" />
+                <p class="temp4"></p>
+                <p class="windSpeed4"></p>
+                <p class="humidity4"></p>
+              </div>
+              <div class="col-2">
+                <h4 id="day5">5</h4>
+                <img class="week" id="5Icon" src="" alt="day 5 weather icon" />
+                <p class="temp5"></p>
+                <p class="windSpeed5"></p>
+                <p class="humidity5"></p>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js" integrity="sha512-FwNWaxyfy2XlEINoSnZh1JQ5TRRtGow0D6XcmAWmYCRgvqOUTnzCxPc9uF35u5ZEpirk1uhlPVA19tflhvnW1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/open-weather/2.0.0/openweather.min.js" integrity="sha512-mlRoH3bU+q4t5clJkMwltJcka6JyNWsUJybBclHUiU0Bdux6LtcNqO8XMNi9/vp4+KCteAbc0hYnHU4Rh2SH+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./assets/script.js"></script>
-</body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js"
+      integrity="sha512-FwNWaxyfy2XlEINoSnZh1JQ5TRRtGow0D6XcmAWmYCRgvqOUTnzCxPc9uF35u5ZEpirk1uhlPVA19tflhvnW1g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/open-weather/2.0.0/openweather.min.js"
+      integrity="sha512-mlRoH3bU+q4t5clJkMwltJcka6JyNWsUJybBclHUiU0Bdux6LtcNqO8XMNi9/vp4+KCteAbc0hYnHU4Rh2SH+g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./assets/script.js"></script>
+  </body>
 </html>
