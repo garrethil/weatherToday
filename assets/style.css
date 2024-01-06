@@ -10,6 +10,10 @@
   color: var(--mainText);
 }
 
+body {
+  background-color: var(--mainBG);
+}
+
 .city {
   margin-bottom: 15px;
 }
@@ -26,16 +30,22 @@ h2 {
 }
 
 #search {
-  height: 100vh;
+  margin-bottom: 30px;
 }
 
 #inputText::placeholder {
   color: var(--mainText);
 }
 
+#inputText {
+  width: 140px;
+  border: 1px dashed yellow;
+}
+
 button {
   padding: 10px;
   border-radius: 8px;
+  border: 2px dotted var(--mainText);
 }
 
 .week {
@@ -48,9 +58,9 @@ button {
 .temp3,
 .temp4,
 .temp5 {
-  border: 2px solid var(--mainText);
-  padding: 5px;
-  border-radius: 8px;
+  border-bottom: 2px solid var(--mainText);
+  padding-bottom: 15px;
+
 }
 
 .pastSearch {

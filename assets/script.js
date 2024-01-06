@@ -37,11 +37,12 @@ var clickedLocation = [];
 // take value from the search input and store that in an array in local storage
 function searchFormSubmit(event) {
   event.preventDefault();
-  var searchData = $.trim(inputText.val());
+  var nonCap = $.trim(inputText.val());
+  var searchData = nonCap.charAt(0).toUpperCase() + nonCap.slice(1);
 
   var searchDataArray = JSON.parse(localStorage.getItem("searchedData")) || [];
 
-  if (searchDataArray.includes(searchData)) {
+  if (searchDataArray.includes(searchData)|| (searchData.length === 0)) {
     getWeather();
   } else {
     searchDataArray.push(searchData);
