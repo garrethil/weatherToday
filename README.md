@@ -16,7 +16,7 @@ The user may enter a city name in the search input area and click the search but
 ![Past Searches](./assets/images/past.png)
 ![Clear Searches](./assets/images/empty.png)
 
-[Live URL](https://garrethil.github.io/weatherToday/)
+[Live URL](https://garrethil.github.io/wheresTheWeather/)
 ## Credits
 
 N/A
